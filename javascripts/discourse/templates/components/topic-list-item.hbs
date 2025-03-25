@@ -1,0 +1,41 @@
+<script type="text/x-handlebars" data-template-name="components/topic-list-item/raw-row">
+  {{#if topic}}
+    <tr class="custom-topic-card-row" data-topic-id="{{topic.id}}">
+      <td colspan="5">
+        <div class="custom-topic-card">
+          <!-- Header -->
+          <div class="card-header">
+            <div class="card-avatar">{{avatar topic.lastPoster}}</div>
+            <div class="card-meta">
+              <span class="card-username">{{topic.lastPoster.username}}</span>
+              {{#if topic.lastPoster.is_staff}}
+                <span class="card-role">Admin</span>
+              {{/if}}
+              <span class="card-time">{{format-date topic.lastPostCreatedAt format="tiny"}}</span>
+              <span class="card-category">{{topic.category.name}}</span>
+            </div>
+          </div>
+
+          <!-- Title + Excerpt -->
+          <div class="card-body">
+            <h2 class="card-title">{{link-to topic.fancyTitle "topic" topic.id}}</h2>
+            {{#if topic.excerpt}}
+              <p class="card-excerpt">{{topic.excerpt}}</p>
+            {{/if}}
+          </div>
+
+          <!-- Footer -->
+          <div class="card-footer">
+            {{#if topic.mainPost}}
+              {{like-button post=topic.mainPost}}
+            {{/if}}
+            <div class="card-comments">
+              <svg class="fa d-icon d-icon-comments svg-icon"><use xlink:href="#comments"></use></svg>
+              <span>{{topic.replyCount}} Comments</span>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  {{/if}}
+</script>
