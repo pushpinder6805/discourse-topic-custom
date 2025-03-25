@@ -1,4 +1,3 @@
-{{!-- has-modern-replacement --}}
-<div class="topic-likes">
-  {{view.topic.like_count}} {{d-icon "heart"}}
-</div>
+<button class="topic-like-button">
+  ❤️ {{this.likeCount}}
+</button>

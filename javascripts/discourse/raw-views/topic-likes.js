@@ -1,3 +1,8 @@
-import EmberObject from "@ember/object";
-
-export default class TopicLikes extends EmberObject {}
+export default (api) => {
+    api.registerRawView("topic-likes", (topic) => {
+      return {
+        template: "topic-likes",
+        args: { topic },
+      };
+    });
+  };

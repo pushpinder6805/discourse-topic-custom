@@ -1,3 +1,8 @@
-import EmberObject from "@ember/object";
-
-export default class TopicExcerpt extends EmberObject {}
+export default (api) => {
+    api.registerRawView("topic-excerpt", (topic) => {
+      return {
+        template: "topic-excerpt",
+        args: { topic },
+      };
+    });
+  };

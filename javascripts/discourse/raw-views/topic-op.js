@@ -1,3 +1,12 @@
-import EmberObject from "@ember/object";
+import RawHtml from "discourse/widgets/raw-html";
 
-export default class TopicOp extends EmberObject {}
+export default (api) => {
+  api.registerRawView("topic-op", (topic) => {
+    return {
+      template: "topic-op",
+      args: {
+        poster: topic.lastPoster,
+      },
+    };
+  });
+};

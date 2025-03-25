@@ -1,10 +1,7 @@
-import dIcon from "discourse/helpers/d-icon";
+import Component from "@glimmer/component";
 
-const TopicLikes = <template>
-  <div class="topic-likes">
-    {{@topic.like_count}}
-    {{dIcon "heart"}}
-  </div>
-</template>;
-
-export default TopicLikes;
+export default class TopicLikes extends Component {
+  get likeCount() {
+    return this.args.topic?.like_count || 0;
+  }
+}
