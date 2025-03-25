@@ -1,0 +1,132 @@
+/* Remove default table styling in the topic list */
+.topic-list {
+    border-collapse: separate;
+  }
+  
+  .topic-list-item {
+    display: none; /* Hide original row styles if needed */
+  }
+  
+  /* Our custom row from the raw-row template above */
+  .custom-topic-card-row {
+    display: table-row !important; /* Keep row-like structure for alignment */
+  }
+  
+  /* The card container */
+  .custom-topic-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  /* Header: avatar, username, role, time, category */
+  .custom-topic-card .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .custom-topic-card .card-avatar {
+    margin-right: 10px;
+  }
+  
+  .custom-topic-card .card-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .custom-topic-card .card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .custom-topic-card .card-username {
+    font-weight: 600;
+  }
+  
+  .custom-topic-card .card-role {
+    background-color: #e1f0ff;
+    color: #007aff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  
+  .custom-topic-card .card-time,
+  .custom-topic-card .card-category {
+    font-size: 13px;
+    color: #888;
+  }
+  
+  /* Body: Title + Excerpt */
+  .custom-topic-card .card-title {
+    margin: 0 0 4px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .custom-topic-card .card-title a {
+    text-decoration: none;
+    color: #1a1a1a;
+  }
+  
+  .custom-topic-card .card-title a:hover {
+    text-decoration: underline;
+  }
+  
+  .custom-topic-card .card-excerpt {
+    margin: 0;
+    color: #555;
+    line-height: 1.4;
+    font-size: 14px;
+  }
+  
+  /* Footer: Like button + Comments */
+  .custom-topic-card .card-footer {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Discourse's built-in like-button classes */
+  .custom-topic-card .card-footer .like-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #666;
+    transition: background 0.2s;
+  }
+  
+  .custom-topic-card .card-footer .like-button:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .custom-topic-card .card-footer .like-button .d-icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .custom-topic-card .card-comments {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .custom-topic-card .card-comments svg {
+    width: 16px;
+    height: 16px;
+  }
+  

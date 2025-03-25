@@ -1,0 +1,60 @@
+<script type="text/x-handlebars" data-template-name="components/topic-list-item/raw-row">
+  {{#if topic}}
+    <tr data-topic-id="{{topic.id}}" class="my-custom-card-row">
+      <td colspan="5">
+        <div class="my-custom-card">
+          <!-- Header with avatar, username, staff/admin label, time, category -->
+          <div class="card-header">
+            <div class="card-avatar">
+              {{avatar topic.lastPoster}}
+            </div>
+            <div class="card-meta">
+              <span class="card-username">
+                {{topic.lastPoster.username}}
+              </span>
+              {{#if topic.lastPoster.is_staff}}
+                <span class="card-role">Admin</span>
+              {{/if}}
+              <span class="card-time">
+                {{format-date topic.lastPostCreatedAt format="tiny"}}
+              </span>
+              <span class="card-category">
+                Posted in {{topic.category.name}}
+              </span>
+            </div>
+          </div>
+
+          <!-- Title + excerpt -->
+          <div class="card-body">
+            <h2 class="card-title">
+              {{link-to topic.fancyTitle "topic" topic.id}}
+            </h2>
+            {{#if topic.excerpt}}
+              <p class="card-excerpt">{{topic.excerpt}}</p>
+            {{/if}}
+          </div>
+
+          <!-- Footer with Like button and comments count -->
+          <div class="card-footer">
+            <!-- 
+              Use Discourse’s built-in like-button 
+              The 'post=topic.mainPost' ensures it references the first post in the topic 
+            -->
+            {{#if topic.mainPost}}
+              {{like-button post=topic.mainPost}}
+            {{/if}}
+
+            <div class="card-comments">
+              <svg class="fa d-icon d-icon-comments svg-icon">
+                <use xlink:href="#comments"></use>
+              </svg>
+              <span class="card-comments-count">
+                {{topic.replyCount}} Comments
+              </span>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  {{/if}}
+</script>
