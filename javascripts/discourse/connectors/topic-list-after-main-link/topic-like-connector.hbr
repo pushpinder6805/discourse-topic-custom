@@ -1,1 +1,1 @@
-{{mount-widget widget="raw-html" rawTemplate="topic-likes" args=args}}
+{{~raw 'topic-likes' topic=context.topic}}
