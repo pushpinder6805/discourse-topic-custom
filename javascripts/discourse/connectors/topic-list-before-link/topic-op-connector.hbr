@@ -1,1 +1,2 @@
-{{~raw 'topic-excerpt' topic=context.topic}}
+{{!-- has-modern-replacement --}}
+{{~raw "topic-op" topic=context.topic}}

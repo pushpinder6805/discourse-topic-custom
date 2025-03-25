@@ -1,7 +1,9 @@
-import Component from "@glimmer/component";
+import dirSpan from "discourse/helpers/dir-span";
 
-export default class TopicExcerpt extends Component {
-  get excerpt() {
-    return this.args.topic?.excerpt;
-  }
-}
+const TopicExcerpt = <template>
+  <div class="topic-excerpt">
+    {{dirSpan @outletArgs.topic.escapedExcerpt htmlSafe="true"}}
+  </div>
+</template>;
+
+export default TopicExcerpt;

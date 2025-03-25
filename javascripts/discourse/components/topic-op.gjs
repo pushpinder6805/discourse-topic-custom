@@ -1,6 +1,17 @@
-import Component from "@glimmer/component";
-import { tracked } from "@glimmer/tracking";
+import UserLink from "discourse/components/user-link";
+import avatar from "discourse/helpers/avatar";
+import formatDate from "discourse/helpers/format-date";
 
-export default class TopicOp extends Component {
-  @tracked poster = this.args.poster;
-}
+const TopicOp = <template>
+  <div class="topic-list-op">
+    <UserLink @user={{@topic.creator}}>
+      {{avatar @topic.creator imageSize="medium"}}
+      <span class="username">
+        {{@topic.creator.username}}
+      </span>
+      {{formatDate @topic.createdAt format="tiny"}}
+    </UserLink>
+  </div>
+</template>;
+
+export default TopicOp;

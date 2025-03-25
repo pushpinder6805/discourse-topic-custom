@@ -1,1 +1,2 @@
-{{mount-widget widget="raw-html" rawTemplate="topic-excerpt" args=args}}
+{{!-- has-modern-replacement --}}
+{{~raw 'topic-excerpt' topic=context.topic}}
